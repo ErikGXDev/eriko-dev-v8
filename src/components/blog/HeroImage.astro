@@ -1,0 +1,21 @@
+---
+interface Props {
+  heroTitle: string;
+  heroSize: number | undefined;
+  heroColor: string | undefined;
+  heroBg: string | undefined;
+}
+
+const { heroTitle, heroColor, heroBg, heroSize } = Astro.props;
+---
+
+<div
+  class="h-32 w-full flex justify-center items-center"
+  style={`background-color: ${heroBg || "#FBFBFB"};`}
+>
+  <span
+    class="font-bold drop-shadow-lg"
+    style={`color: ${heroColor || "#30303F"}; font-size: ${heroSize || 3}rem;`}
+    >{heroTitle}</span
+  >
+</div>

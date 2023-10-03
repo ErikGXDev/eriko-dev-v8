@@ -1,0 +1,11 @@
+---
+import type { TransitionAnimationValue } from "astro";
+
+interface Props {
+  transition?: TransitionAnimationValue;
+}
+
+const { transition } = Astro.props;
+---
+
+<main transition:animate={transition || "none"}><slot /></main>

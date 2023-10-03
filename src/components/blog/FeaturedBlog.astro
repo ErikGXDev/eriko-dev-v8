@@ -1,0 +1,14 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogCard from "./BlogCard.astro";
+
+const collection = await getCollection("blog");
+
+const posts = collection.filter(
+  (post: CollectionEntry<"blog">) => post.data.featured,
+);
+---
+
+<ul class="grid grid-cols-1 gap-4">
+  {posts.map((post) => <BlogCard {post} />)}
+</ul>

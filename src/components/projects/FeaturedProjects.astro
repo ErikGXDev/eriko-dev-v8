@@ -1,0 +1,14 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+
+const collection = await getCollection("projects");
+
+const posts = collection.filter(
+  (post: CollectionEntry<"projects">) => post.data.featured,
+);
+---
+
+<ul class="grid grid-cols-1 gap-4">
+  {posts.map((post) => <ProjectCard {post} />)}
+</ul>

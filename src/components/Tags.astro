@@ -1,0 +1,37 @@
+---
+import { getUniqueTags } from "@util/util";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  collection: CollectionEntry<"blog">[] | CollectionEntry<"projects">[];
+  path: string;
+  curr?: string;
+}
+
+const { collection, path, curr } = Astro.props;
+
+const tags = getUniqueTags(collection);
+---
+
+<div class="tags flex gap-2 flex-wrap mt-4 mb-6">
+  <a
+    href={`/${path}`}
+    class={curr == "all" ? "bg-gx-gray-800/90" : "bg-gx-gray-900"}>#all</a
+  >
+  {
+    tags.map((tag) => (
+      <a
+        href={`/${path}/tag/` + tag}
+        class={curr == tag ? "bg-gx-gray-800/90" : "bg-gx-gray-900"}
+      >
+        <span>#{tag}</span>
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .tags a {
+    @apply hover:bg-gx-gray-800/80 transition-colors p-2 px-4 rounded-md;
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import Icon from "astro-icon";
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+---
+
+<span class="flex gap-1 items-center text-gx-gray-300">
+  <Icon name="fe:clock" size="16" />
+  <time datetime={date.toISOString()}>
+    {
+      date.toLocaleDateString("en-us", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    }
+  </time></span
+>

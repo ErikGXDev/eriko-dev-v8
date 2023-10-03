@@ -1,0 +1,29 @@
+---
+const links = {
+  Projects: "/projects",
+  Blog: "/blog",
+  About: "/about",
+};
+---
+
+<nav
+  class="py-6 flex justify-between items-center border-b border-b-gx-gray-800 mb-12"
+  transition:animate="none"
+>
+  <a
+    href="/"
+    class="navbarheader hover:transition-colors text-2xl font-bold z-10 text-white hover:bg-gradient-to-r from-amber-500 to-gx-rose-500 hover:bg-clip-text hover:text-transparent"
+  >
+    ErikGXDev
+  </a>
+
+  <div class="flex gap-6">
+    {
+      Object.entries(links).map((link) => (
+        <a href={link[1]} class="py-2">
+          {link[0]}
+        </a>
+      ))
+    }
+  </div>
+</nav>
