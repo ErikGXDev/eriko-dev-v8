@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Geometrize Video",
+    "description": "Convert your video into geometric primitives.",
+    "link": "https://github.com/ErikGXDev/geometrize-video-nodejs",
+    "category": [1],
+    "thumbnail": "/thumbnail/geometrize-video.png",
+    "featured": true
+  },
+  {
+    "title": "Laptop Boot Analysis",
+    "description": "Analysis of all the times I started my laptop.",
+    "link": "https://my-laptop-boots-analysed.vercel.app/",
+    "category": [],
+    "thumbnail": ""
+  },
+  {
+    "title": "Mark's Food Place",
+    "description": "A restaurant game about fulfilling orders. Winner of MarkJam 5.",
+    "link": "https://erikgxdev.itch.io/marks-food-place",
+    "thumbnail": "/thumbnail/mark-food-place.png",
+    "category": [1, 3]
+  },
+  {
+    "title": "Mark's Knight",
+    "description": "An infinite dungeon game. Winner of MarkJam 4.",
+    "link": "https://erikgxdev.itch.io/mark-knight",
+    "thumbnail": "/thumbnail/mark-knight.png",
+    "category": [1, 3],
+    "featured": true
+  },
+  {
+    "title": "Atom One Dark for Replit.com",
+    "description": "The popular Visual Studio Code theme ported to Replit.com",
+    "link": "https://replit.com/theme/@ErikoXDev/atom-one-dark",
+    "thumbnail": "/thumbnail/atom-one-dark.png",
+    "category": [2]
+  },
+  {
+    "title": "Golf Course",
+    "description": "Play minigolf in this pixel art browser game.",
+    "link": "https://Golf-Course.erikoxdev.repl.co",
+    "thumbnail": "/thumbnail/golf-course.png",
+    "category": [1, 3]
+  }
+]
