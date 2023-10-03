@@ -1,7 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Main from "@components/Main.astro";
+import FeaturedBlog from "@components/blog/FeaturedBlog.astro";
+import Footer from "@components/nav/Footer.astro";
+import Navbar from "@components/nav/Navbar.astro";
+import FeaturedProjects from "@components/projects/FeaturedProjects.astro";
+import Socials from "@components/socials/Socials.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  e
+  <Navbar />
+  <Main>
+    <section>
+      <h1 class="text-4xl font-bold">
+        Hi, I'm
+        <span
+          class="bg-gradient-to-r from-amber-500 to-gx-rose-500 bg-clip-text text-transparent font-bold"
+        >
+          ErikGXDev</span
+        >.
+      </h1>
+      <p class="mt-4">
+        I'm Erik, a fullstack developer. I create websites and apps using
+        Javascript Frameworks like Astro, Svelte and React. I also use other
+        programming languages like Python, Haxe and Java to create different
+        projects.
+      </p>
+    </section>
+    <section>
+      <h3>Socials</h3>
+      <Socials />
+    </section>
+    <section>
+      <h3>Featured Projects</h3>
+      <FeaturedProjects />
+    </section>
+    <section>
+      <h3>Featured Blog Posts</h3>
+      <FeaturedBlog />
+    </section>
+  </Main>
+  <Footer />
 </Layout>
+
+<style>
+  section {
+    @apply mb-8;
+  }
+
+  section > h3 {
+    @apply text-3xl font-medium mb-3;
+  }
+</style>

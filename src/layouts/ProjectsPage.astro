@@ -1,0 +1,48 @@
+---
+import Navbar from "@components/nav/Navbar.astro";
+import Layout from "@layouts/Layout.astro";
+import FormattedDate from "@components/blog/FormattedDate.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Footer from "@components/nav/Footer.astro";
+import BlogCard from "@components/blog/BlogCard.astro";
+import { getUniqueTags, toTitleCase } from "@util/util";
+import ProjectCard from "@components/projects/ProjectCard.astro";
+import Tags from "@components/Tags.astro";
+import Main from "@components/Main.astro";
+import { slide } from "astro:transitions";
+
+interface Props {
+  tag: string;
+}
+
+const { tag } = Astro.props;
+
+const collection = await getCollection("projects");
+
+const tags = getUniqueTags(collection);
+
+const projects = collection.filter(
+  (post) => tag == "all" || post.data.tags.includes(tag),
+);
+---
+
+<Layout title="Projects">
+  <Navbar />
+  <Main>
+    <h1 class="text-4xl font-bold">
+      <span
+        class="bg-gradient-to-r from-amber-500 to-gx-rose-500 bg-clip-text text-transparent"
+      >
+        {toTitleCase(tag)}
+      </span>{" "}
+      <span>Projects</span>
+    </h1>
+    <Tags {collection} curr={tag} path="projects" />
+    <section transition:animate="slide" class="mb-8">
+      <ul class="grid grid-cols-1 gap-4">
+        {projects.map((post) => <ProjectCard {post} />)}
+      </ul>
+    </section>
+  </Main>
+  <Footer />
+</Layout>

@@ -1,0 +1,22 @@
+---
+import ProjectsPage from "@layouts/ProjectsPage.astro";
+import { getUniqueTags } from "@util/util";
+import { getCollection } from "astro:content";
+
+const { tag } = Astro.props;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("projects");
+
+  const tags = getUniqueTags(posts);
+
+  return tags.map((tag) => {
+    return {
+      params: { tag },
+      props: { tag },
+    };
+  });
+}
+---
+
+<ProjectsPage tag={tag} />
