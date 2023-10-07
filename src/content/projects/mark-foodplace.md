@@ -4,4 +4,5 @@ description: A restaurant game about preparing food and time pressure. Winner of
 link: https://erikgxdev.itch.io/marks-food-place
 tags: ["programming", "pixel-art"]
 heroImage: ./images/mark-foodplace.png
+featured: true
 ---

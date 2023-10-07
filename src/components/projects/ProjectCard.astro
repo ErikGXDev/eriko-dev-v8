@@ -14,7 +14,7 @@ const { post } = Astro.props;
 <li
   class="rounded-md overflow-hidden bg-gx-gray-900 hover:bg-gx-gray-800/60 transition-colors"
 >
-  <a href={post.data.link} target="_blank" rel="noreferrer" class="flex h-40">
+  <a href={post.data.link} target="_blank" rel="noreferrer" class="flex">
     <div class="w-1/2 overflow-hidden items-center hidden md:flex">
       <Image src={post.data.heroImage} alt={post.data.heroAlt} height={300} />
     </div>
